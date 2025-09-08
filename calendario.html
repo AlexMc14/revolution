@@ -1,0 +1,777 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Revolution eSports - Calendario</title>
+        <meta name="description" content="Calendario de eventos y partidos de Revolution Esports">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="font-flaticon/flaticon.css">
+        <link rel="stylesheet" href="css/dripicons.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/meanmenu.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <style>
+            .calendar-nav {
+                background: rgba(255,255,255,0.05);
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            .calendar-nav .nav-link {
+                color: #fff;
+                border: none;
+                background: transparent;
+                padding: 12px 25px;
+                margin: 0 5px;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+            .calendar-nav .nav-link.active {
+                background: #ff6b35;
+                color: #fff;
+            }
+            .calendar-nav .nav-link:hover {
+                background: rgba(255,107,53,0.3);
+                color: #fff;
+            }
+            
+            .monthly-calendar {
+                background: rgba(255,255,255,0.05);
+                border-radius: 20px;
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+            .monthly-calendar .calendar-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .monthly-calendar .calendar-header h3 {
+                color: #fff;
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            .monthly-calendar .calendar-grid {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 10px;
+            }
+            .monthly-calendar .day-header {
+                background: rgba(255,107,53,0.2);
+                color: #ff6b35;
+                padding: 15px 10px;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 10px;
+                font-size: 14px;
+            }
+            .monthly-calendar .day-cell {
+                background: rgba(255,255,255,0.03);
+                border: 1px solid rgba(255,255,255,0.1);
+                border-radius: 10px;
+                padding: 15px 10px;
+                min-height: 120px;
+                position: relative;
+            }
+            .monthly-calendar .day-number {
+                color: #fff;
+                font-weight: bold;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .monthly-calendar .event-item {
+                background: rgba(255,107,53,0.2);
+                border-left: 3px solid #ff6b35;
+                padding: 8px 10px;
+                margin-bottom: 5px;
+                border-radius: 5px;
+                font-size: 12px;
+                color: #fff;
+            }
+            .monthly-calendar .event-item.fifa {
+                background: rgba(0,123,255,0.2);
+                border-left-color: #007bff;
+            }
+            .monthly-calendar .event-item.lol {
+                background: rgba(220,53,69,0.2);
+                border-left-color: #dc3545;
+            }
+            .monthly-calendar .event-item.tft {
+                background: rgba(255,193,7,0.2);
+                border-left-color: #ffc107;
+            }
+            
+            .weekly-calendar {
+                background: rgba(255,255,255,0.05);
+                border-radius: 20px;
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+            .weekly-calendar .week-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .weekly-calendar .week-header h3 {
+                color: #fff;
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            .weekly-calendar .week-grid {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 15px;
+            }
+            .weekly-calendar .day-card {
+                background: rgba(255,255,255,0.03);
+                border: 1px solid rgba(255,255,255,0.1);
+                border-radius: 15px;
+                padding: 20px;
+                min-height: 200px;
+            }
+            .weekly-calendar .day-name {
+                color: #ff6b35;
+                font-weight: bold;
+                font-size: 18px;
+                text-align: center;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(255,107,53,0.3);
+            }
+            .weekly-calendar .day-date {
+                color: #ccc;
+                font-size: 14px;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            .weekly-calendar .event-card {
+                background: rgba(255,107,53,0.1);
+                border-radius: 10px;
+                padding: 15px;
+                margin-bottom: 10px;
+                border-left: 4px solid #ff6b35;
+            }
+            .weekly-calendar .event-card.fifa {
+                background: rgba(0,123,255,0.1);
+                border-left-color: #007bff;
+            }
+            .weekly-calendar .event-card.lol {
+                background: rgba(220,53,69,0.1);
+                border-left-color: #dc3545;
+            }
+            .weekly-calendar .event-card.tft {
+                background: rgba(255,193,7,0.1);
+                border-left-color: #ffc107;
+            }
+            .weekly-calendar .event-title {
+                color: #fff;
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            .weekly-calendar .event-time {
+                color: #ff6b35;
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            .weekly-calendar .event-time.fifa {
+                color: #007bff;
+            }
+            .weekly-calendar .event-time.lol {
+                color: #dc3545;
+            }
+            .weekly-calendar .event-time.tft {
+                color: #ffc107;
+            }
+            .weekly-calendar .event-opponent {
+                color: #ccc;
+                font-size: 12px;
+            }
+            .weekly-calendar .empty-day {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100px;
+                color: #666;
+                font-style: italic;
+            }
+            
+            .calendar-filters {
+                background: rgba(255,255,255,0.05);
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            .calendar-filters .filter-btn {
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.2);
+                color: #fff;
+                padding: 8px 15px;
+                margin: 0 5px;
+                border-radius: 8px;
+                font-size: 14px;
+                transition: all 0.3s ease;
+            }
+            .calendar-filters .filter-btn.active {
+                background: #ff6b35;
+                border-color: #ff6b35;
+            }
+            .calendar-filters .filter-btn.fifa {
+                border-color: #007bff;
+            }
+            .calendar-filters .filter-btn.fifa.active {
+                background: #007bff;
+            }
+            .calendar-filters .filter-btn.lol {
+                border-color: #dc3545;
+            }
+            .calendar-filters .filter-btn.lol.active {
+                background: #dc3545;
+            }
+            .calendar-filters .filter-btn.tft {
+                border-color: #ffc107;
+            }
+            .calendar-filters .filter-btn.tft.active {
+                background: #ffc107;
+            }
+
+            .container-calendar {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+      <!-- header -->
+      <header class="header-area header-three">  
+        <div id="header-sticky" class="menu-area">
+            <div class="container-calendar">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-6">
+                            <div class="logo">
+                                <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 text-right text-xl-right d-none d-lg-block">
+                          
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                        <ul>
+
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="historia.html">Quiénes Somos</a></li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Plantilla</a>
+                                                <ul>
+                                                    <li><a href="teamAlex.html">Jugadores actuales (FIFA)</a></li>
+<li><a href="tft.html">TFT</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Históricos (FIFA)</a>
+                                                <ul>
+                                                    <li><a href="capitanes.html">Antiguos capitanes</a></li>
+                                                    <li><a href="ranking.html">Ranking histórico</a></li>
+                                                    <li><a href="historico-jugadores.html">Histórico jugadores</a></li>
+                                                    <li><a href="index-2.html">Mejor 11</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li><a href="calendario.html">Calendario</a></li></ul>
+                                    </nav>
+                            </div>
+                        </div>   
+                        <div class="col-xl-2 col-lg-2 col-6 text-right d-lg-none mt-30 mb-30">
+                           <div class="cart-top">
+                               <ul>
+                                   <li><a href="#" class="menu-tigger"><img src="img/bg/toggle-menu.png" alt="logo"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="col-12">
+                                <div class="mobile-menu"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header--->
+        <!-- offcanvas-area -->
+                <div class="offcanvas-menu">
+                <span class="menu-close"><i class="fas fa-times"></i></span>
+              <form role="search" method="get" id="searchform"   class="searchform" action="http://wordpress.zcube.in/xconsulta/">
+                                <input type="text" name="s" id="search" value="" placeholder="Search"  />
+                                <button><i class="fa fa-search"></i></button>
+                            </form>
+
+                    
+                    <div id="cssmenu3" class="menu-one-page-menu-container">
+                        <ul id="menu-one-page-menu-2" class="menu">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="index.html">Inicio</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="historia.html">Quiénes Somos</a></li>
+                            <li class="has-sub">
+                                <a href="index.html">Plantilla</a>
+                                <ul>
+                                    <li><a href="teamAlex.html">Jugadores actuales (FIFA)</a></li>
+<li><a href="tft.html">TFT</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href="index.html">Históricos (FIFA)</a>
+                                <ul>
+                                    <li><a href="capitanes.html">Antiguos capitanes</a></li>
+                                    <li><a href="ranking.html">Ranking histórico</a></li>
+                                    <li><a href="historico-jugadores.html">Histórico jugadores</a></li>
+                                    <li><a href="index-2.html">Mejor 11</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="calendario.html">Calendario</a></li></ul>
+                    </div>
+            </div>
+            <div class="offcanvas-overly"></div>
+                 <!-- offcanvas-end -->
+        <!-- main-area -->
+        <main>
+       
+            <!-- breadcrumb-area -->
+            <section class="about-area pt-120 pb-90">
+                <div class="container-calendar">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="about-content">
+                                <div class="section-title mb-30 text-center">
+                                    <h2><span>CALENDARIO DE EVENTOS</span></h2>
+                                    <div class="line5"><img src="img/bg/circle_left.png" alt="circle_left"></div>
+                                </div>
+                                <div>
+                                    <p class="text-center" style="font-size: 18px; line-height: 1.8; color: #fff;">
+                                        Mantente al día con todos los partidos y eventos de Revolution Esports. Aquí encontrarás el calendario completo de competiciones de FIFA, League of Legends, TFT y más.
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+
+            <!-- Calendar Navigation -->
+            <section class="pb-90">
+                <div class="container-calendar">
+                    <div class="calendar-nav">
+                        <ul class="nav nav-pills justify-content-center" id="calendarTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="weekly-tab" data-toggle="pill" data-target="#weekly" type="button" role="tab">
+                                    <i class="fas fa-calendar-week"></i> Vista Semanal
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="monthly-tab" data-toggle="pill" data-target="#monthly" type="button" role="tab">
+                                    <i class="fas fa-calendar-alt"></i> Vista Mensual
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Calendar Filters -->
+                    <div class="calendar-filters text-center">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn fifa" data-filter="fifa">FIFA</button>
+                        <button class="filter-btn lol" data-filter="lol">League of Legends</button>
+                        <button class="filter-btn tft" data-filter="tft">TFT</button>
+                    </div>
+
+                    <!-- Calendar Content -->
+                    <div class="tab-content" id="calendarTabContent">
+                        <!-- Weekly Calendar -->
+                        <div class="tab-pane fade show active" id="weekly" role="tabpanel">
+                            <div class="weekly-calendar">
+                                <div class="week-header">
+                                    <h3>Semana del 15 - 21 de Enero 2025</h3>
+                                </div>
+                                <div class="week-grid">
+                                    <!-- Monday -->
+                                    <div class="day-card">
+                                        <div class="day-name">Lunes</div>
+                                        <div class="day-date">15 Enero</div>
+                                        <div class="empty-day">
+                                            <i class="fas fa-plus-circle"></i> Sin eventos
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Tuesday -->
+                                    <div class="day-card">
+                                        <div class="day-name">Martes</div>
+                                        <div class="day-date">16 Enero</div>
+                                        <div class="event-card fifa">
+                                            <div class="event-title">Revolution vs Team Madrid</div>
+                                            <div class="event-time fifa">20:00h CET</div>
+                                            <div class="event-opponent">Liga Nacional FIFA</div>
+                                        </div>
+                                        <div class="event-card tft">
+                                            <div class="event-title">TFT Championship</div>
+                                            <div class="event-time tft">22:00h CET</div>
+                                            <div class="event-opponent">LordFlatu & Ladylencia</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Wednesday -->
+                                    <div class="day-card">
+                                        <div class="day-name">Miércoles</div>
+                                        <div class="day-date">17 Enero</div>
+                                        <div class="event-card lol">
+                                            <div class="event-title">Revolution vs Giants</div>
+                                            <div class="event-time lol">19:00h CET</div>
+                                            <div class="event-opponent">Superliga LoL</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Thursday -->
+                                    <div class="day-card">
+                                        <div class="day-name">Jueves</div>
+                                        <div class="day-date">18 Enero</div>
+                                        <div class="event-card fifa">
+                                            <div class="event-title">Revolution vs Barcelona</div>
+                                            <div class="event-time fifa">21:00h CET</div>
+                                            <div class="event-opponent">Copa del Rey FIFA</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Friday -->
+                                    <div class="day-card">
+                                        <div class="day-name">Viernes</div>
+                                        <div class="day-date">19 Enero</div>
+                                        <div class="empty-day">
+                                            <i class="fas fa-plus-circle"></i> Sin eventos
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Saturday -->
+                                    <div class="day-card">
+                                        <div class="day-name">Sábado</div>
+                                        <div class="day-date">20 Enero</div>
+                                        <div class="event-card lol">
+                                            <div class="event-title">Revolution vs MAD Lions</div>
+                                            <div class="event-time lol">18:00h CET</div>
+                                            <div class="event-opponent">LEC Spring Split</div>
+                                        </div>
+                                        <div class="event-card tft">
+                                            <div class="event-title">TFT Open Tournament</div>
+                                            <div class="event-time tft">20:30h CET</div>
+                                            <div class="event-opponent">LordFlatu & Ladylencia</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Sunday -->
+                                    <div class="day-card">
+                                        <div class="day-name">Domingo</div>
+                                        <div class="day-date">21 Enero</div>
+                                        <div class="event-card fifa">
+                                            <div class="event-title">Revolution vs Atlético</div>
+                                            <div class="event-time fifa">17:00h CET</div>
+                                            <div class="event-opponent">Liga Nacional FIFA</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Monthly Calendar -->
+                        <div class="tab-pane fade" id="monthly" role="tabpanel">
+                            <div class="monthly-calendar">
+                                <div class="calendar-header">
+                                    <h3>Enero 2025</h3>
+                                </div>
+                                <div class="calendar-grid">
+                                    <!-- Day Headers -->
+                                    <div class="day-header">Lun</div>
+                                    <div class="day-header">Mar</div>
+                                    <div class="day-header">Mié</div>
+                                    <div class="day-header">Jue</div>
+                                    <div class="day-header">Vie</div>
+                                    <div class="day-header">Sáb</div>
+                                    <div class="day-header">Dom</div>
+                                    
+                                    <!-- Week 1 -->
+                                    <div class="day-cell"></div>
+                                    <div class="day-cell"></div>
+                                    <div class="day-cell">
+                                        <div class="day-number">1</div>
+                                        <div class="event-item fifa">Revolution vs Valencia<br>20:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">2</div>
+                                        <div class="event-item lol">vs Giants<br>19:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">3</div>
+                                        <div class="event-item tft">TFT Championship<br>22:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">4</div>
+                                        <div class="event-item fifa">vs Sevilla<br>21:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">5</div>
+                                        <div class="event-item lol">vs Fnatic<br>18:00h</div>
+                                    </div>
+                                    
+                                    <!-- Week 2 -->
+                                    <div class="day-cell">
+                                        <div class="day-number">6</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">7</div>
+                                        <div class="event-item fifa">vs Athletic<br>20:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">8</div>
+                                        <div class="event-item tft">TFT Open<br>22:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">9</div>
+                                        <div class="event-item lol">vs G2<br>19:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">10</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">11</div>
+                                        <div class="event-item fifa">vs Real Madrid<br>21:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">12</div>
+                                        <div class="event-item lol">vs Team Heretics<br>18:00h</div>
+                                    </div>
+                                    
+                                    <!-- Week 3 -->
+                                    <div class="day-cell">
+                                        <div class="day-number">13</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">14</div>
+                                        <div class="event-item tft">TFT Championship<br>22:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">15</div>
+                                        <div class="event-item fifa">vs Betis<br>20:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">16</div>
+                                        <div class="event-item lol">vs Excel<br>19:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">17</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">18</div>
+                                        <div class="event-item fifa">vs Villarreal<br>21:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">19</div>
+                                        <div class="event-item lol">vs SK Gaming<br>18:00h</div>
+                                    </div>
+                                    
+                                    <!-- Week 4 -->
+                                    <div class="day-cell">
+                                        <div class="day-number">20</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">21</div>
+                                        <div class="event-item tft">TFT Open<br>22:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">22</div>
+                                        <div class="event-item fifa">vs Celta<br>20:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">23</div>
+                                        <div class="event-item lol">vs Astralis<br>19:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">24</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">25</div>
+                                        <div class="event-item fifa">vs Alavés<br>21:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">26</div>
+                                        <div class="event-item lol">vs Vitality<br>18:00h</div>
+                                    </div>
+                                    
+                                    <!-- Week 5 -->
+                                    <div class="day-cell">
+                                        <div class="day-number">27</div>
+                                        <div class="event-item tft">TFT Championship<br>22:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">28</div>
+                                        <div class="event-item fifa">vs Getafe<br>20:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">29</div>
+                                        <div class="event-item lol">vs Rogue<br>19:00h</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">30</div>
+                                    </div>
+                                    <div class="day-cell">
+                                        <div class="day-number">31</div>
+                                        <div class="event-item fifa">vs Mallorca<br>21:00h</div>
+                                    </div>
+                                    <div class="day-cell"></div>
+                                    <div class="day-cell"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+         
+        </main>
+        <!-- main-area-end -->
+<!-- footer -->
+        <footer class="footer-bg footer-p" style="background: #1e191f;">
+             <div class="footer-top pt-70">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        
+                          <div class="col-xl-4 col-lg-4 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title mb-20">
+                                   <img src="img/logo/logo.png" alt="img" style="max-width: 87px;">
+                                </div>
+                                <div class="footer-link">
+                                   Horario de entrenamientos: <br> D-J 22:30-00:00 (Hora peninsular)
+                                </div>
+                            </div>
+                        </div>  
+                       <div class="col-xl-3 col-lg-3 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title">
+                                    <h2>Redes sociales</h2>
+                                </div>
+                                <div class="footer-social  mt-30">                                    
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                              
+                            </div>
+                        </div>  
+                      
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-wrap">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">                         
+                             Copyright © 2025 Revolution All Rights Reserved. 
+                        </div>
+                        <div class="col-lg-6 text-right text-xl-right">                       
+                                   
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-end -->
+
+
+		<!-- JS here -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/paroller.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/js_isotope.pkgd.min.js"></script>
+        <script src="js/imagesloaded.min.js"></script>
+        <script src="js/parallax.min.js"></script>
+         <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <script src="js/parallax-scroll.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/element-in-view.js"></script>
+        <script src="js/main.js"></script>
+        
+        <script>
+            // Calendar tab functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Tab functionality
+                const tabButtons = document.querySelectorAll('[data-toggle="pill"]');
+                const tabPanes = document.querySelectorAll('.tab-pane');
+                
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all buttons and panes
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabPanes.forEach(pane => {
+                            pane.classList.remove('show', 'active');
+                        });
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Show corresponding pane
+                        const targetId = this.getAttribute('data-target');
+                        const targetPane = document.querySelector(targetId);
+                        if (targetPane) {
+                            targetPane.classList.add('show', 'active');
+                        }
+                    });
+                });
+                
+                // Calendar filter functionality
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                const events = document.querySelectorAll('.event-card, .event-item');
+                
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const filter = this.getAttribute('data-filter');
+                        
+                        // Remove active class from all buttons
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Filter events
+                        events.forEach(event => {
+                            if (filter === 'all' || event.classList.contains(filter)) {
+                                event.style.display = 'block';
+                            } else {
+                                event.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html> 

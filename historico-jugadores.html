@@ -1,0 +1,749 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Revolution eSports - Histórico de Jugadores</title>
+        <meta name="description" content="Histórico de jugadores de Revolution Esports">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="font-flaticon/flaticon.css">
+        <link rel="stylesheet" href="css/dripicons.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/meanmenu.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <style>
+            .stats-container {
+                background: rgba(255,255,255,0.05);
+                border-radius: 20px;
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+            
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .stat-card {
+                background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(255,107,53,0.05) 100%);
+                border: 1px solid rgba(255,107,53,0.2);
+                border-radius: 15px;
+                padding: 25px;
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+            
+            .stat-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(255,107,53,0.2);
+            }
+            
+            .stat-number {
+                font-size: 48px;
+                font-weight: bold;
+                color: #ff6b35;
+                margin-bottom: 10px;
+            }
+            
+            .stat-label {
+                color: #fff;
+                font-size: 18px;
+                font-weight: 500;
+            }
+            
+            .players-section {
+                background: rgba(255,255,255,0.05);
+                border-radius: 20px;
+                padding: 30px;
+            }
+            
+            .players-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 20px;
+            }
+            
+            .player-card {
+                background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+                border: 1px solid rgba(255,255,255,0.1);
+                border-radius: 15px;
+                padding: 20px;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .player-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, #ff6b35, #ff8c42, #ff6b35);
+                background-size: 200% 100%;
+                animation: gradient 3s ease infinite;
+            }
+            
+            @keyframes gradient {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            
+            .player-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+                border-color: rgba(255,107,53,0.3);
+            }
+            
+            .player-rank {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: rgba(255,107,53,0.2);
+                color: #ff6b35;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            
+            .player-name {
+                color: #fff;
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                padding-right: 40px;
+            }
+            
+            .player-matches {
+                color: #ff6b35;
+                font-size: 32px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            
+            .player-period {
+                color: #ccc;
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            
+            .player-status {
+                display: inline-block;
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            
+            .player-status.active {
+                background: rgba(40,167,69,0.2);
+                color: #28a745;
+                border: 1px solid rgba(40,167,69,0.3);
+            }
+            
+            .player-status.retired {
+                background: rgba(108,117,125,0.2);
+                color: #6c757d;
+                border: 1px solid rgba(108,117,125,0.3);
+            }
+            
+            .top-players {
+                background: rgba(255,255,255,0.05);
+                border-radius: 20px;
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+            
+            .top-player {
+                display: flex;
+                align-items: center;
+                background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(255,107,53,0.05) 100%);
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 15px;
+                transition: all 0.3s ease;
+            }
+            
+            .top-player:hover {
+                transform: translateX(10px);
+                box-shadow: 0 10px 25px rgba(255,107,53,0.2);
+            }
+            
+            .top-player-rank {
+                background: #ff6b35;
+                color: #fff;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 20px;
+                margin-right: 20px;
+                flex-shrink: 0;
+            }
+            
+            .top-player-info {
+                flex-grow: 1;
+            }
+            
+            .top-player-name {
+                color: #fff;
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            
+            .top-player-stats {
+                color: #ccc;
+                font-size: 14px;
+            }
+            
+            .top-player-matches {
+                color: #ff6b35;
+                font-size: 24px;
+                font-weight: bold;
+                margin-left: 20px;
+            }
+            
+            .search-filter {
+                background: rgba(255,255,255,0.05);
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .search-input {
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.2);
+                color: #fff;
+                padding: 12px 20px;
+                border-radius: 10px;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .search-input::placeholder {
+                color: #ccc;
+            }
+            
+            .filter-buttons {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            .filter-btn {
+                background: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.2);
+                color: #fff;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 14px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+            
+            .filter-btn.active {
+                background: #ff6b35;
+                border-color: #ff6b35;
+            }
+            
+            .filter-btn:hover {
+                background: rgba(255,107,53,0.3);
+                border-color: #ff6b35;
+            }
+        </style>
+    </head>
+    <body>
+      <!-- header -->
+      <header class="header-area header-three">  
+        <div id="header-sticky" class="menu-area">
+            <div class="container">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-6">
+                            <div class="logo">
+                                <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 text-right text-xl-right d-none d-lg-block">
+                          
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                        <ul>
+
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="historia.html">Quiénes Somos</a></li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Plantilla</a>
+                                                <ul>
+                                                    <li><a href="teamAlex.html">Jugadores actuales (FIFA)</a></li>
+<li><a href="tft.html">TFT</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Históricos (FIFA)</a>
+                                                <ul>
+                                                    <li><a href="capitanes.html">Antiguos capitanes</a></li>
+                                                    <li><a href="ranking.html">Ranking histórico</a></li>
+                                                    <li><a href="historico-jugadores.html">Histórico jugadores</a></li>
+                                                    <li><a href="index-2.html">Mejor 11</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li><a href="calendario.html">Calendario</a></li></ul>
+                                    </nav>
+                            </div>
+                        </div>   
+                        <div class="col-xl-2 col-lg-2 col-6 text-right d-lg-none mt-30 mb-30">
+                           <div class="cart-top">
+                               <ul>
+                                   <li><a href="#" class="menu-tigger"><img src="img/bg/toggle-menu.png" alt="logo"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                            <div class="col-12">
+                                <div class="mobile-menu"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header--->
+        <!-- offcanvas-area -->
+                <div class="offcanvas-menu">
+                <span class="menu-close"><i class="fas fa-times"></i></span>
+              <form role="search" method="get" id="searchform"   class="searchform" action="http://wordpress.zcube.in/xconsulta/">
+                                <input type="text" name="s" id="search" value="" placeholder="Search"  />
+                                <button><i class="fa fa-search"></i></button>
+                            </form>
+
+                    
+                    <div id="cssmenu3" class="menu-one-page-menu-container">
+                        <ul id="menu-one-page-menu-2" class="menu">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="index.html">Inicio</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="historia.html">Quiénes Somos</a></li>
+                            <li class="has-sub">
+                                <a href="index.html">Plantilla</a>
+                                <ul>
+                                    <li><a href="teamAlex.html">Jugadores actuales (FIFA)</a></li>
+<li><a href="tft.html">TFT</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="has-sub">
+                                <a href="index.html">Históricos (FIFA)</a>
+                                <ul>
+                                    <li><a href="capitanes.html">Antiguos capitanes</a></li>
+                                    <li><a href="ranking.html">Ranking histórico</a></li>
+                                    <li><a href="historico-jugadores.html">Histórico jugadores</a></li>
+                                    <li><a href="index-2.html">Mejor 11</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="calendario.html">Calendario</a></li></ul>
+                    </div>
+            </div>
+            <div class="offcanvas-overly"></div>
+                 <!-- offcanvas-end -->
+        <!-- main-area -->
+        <main>
+       
+            <!-- breadcrumb-area -->
+            <section class="about-area pt-120 pb-90">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="about-content">
+                                <div class="section-title mb-30 text-center">
+                                    <h2><span>HISTÓRICO DE JUGADORES</span></h2>
+                                    <div class="line5"><img src="img/bg/circle_left.png" alt="circle_left"></div>
+                                </div>
+                                <div>
+                                    <p class="text-center" style="font-size: 18px; line-height: 1.8; color: #fff;">
+                                        Descubre la historia completa de Revolution Esports a través de sus jugadores. Desde los fundadores hasta los nuevos talentos, cada uno ha dejado su huella en el club.
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+
+            <!-- Stats Overview -->
+            <section class="pb-90">
+                <div class="container">
+                    <div class="stats-container">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">51</div>
+                                <div class="stat-label">Jugadores Totales</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">2,147</div>
+                                <div class="stat-label">Partidos Jugados</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Años de Historia</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">171</div>
+                                <div class="stat-label">Récord de Partidos</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top 5 Players -->
+                    <div class="top-players">
+                        <h3 style="color: #fff; text-align: center; margin-bottom: 30px; font-size: 28px;">TOP 5 JUGADORES</h3>
+                        <div class="top-player">
+                            <div class="top-player-rank">1</div>
+                            <div class="top-player-info">
+                                <div class="top-player-name">Vicente</div>
+                                <div class="top-player-stats">2017 - Actualidad</div>
+                            </div>
+                            <div class="top-player-matches">171</div>
+                        </div>
+                        <div class="top-player">
+                            <div class="top-player-rank">2</div>
+                            <div class="top-player-info">
+                                <div class="top-player-name">Sergio</div>
+                                <div class="top-player-stats">2017 - Actualidad</div>
+                            </div>
+                            <div class="top-player-matches">142</div>
+                        </div>
+                        <div class="top-player">
+                            <div class="top-player-rank">3</div>
+                            <div class="top-player-info">
+                                <div class="top-player-name">Aitor</div>
+                                <div class="top-player-stats">2019 - Actualidad</div>
+                            </div>
+                            <div class="top-player-matches">126</div>
+                        </div>
+                        <div class="top-player">
+                            <div class="top-player-rank">4</div>
+                            <div class="top-player-info">
+                                <div class="top-player-name">Ivan</div>
+                                <div class="top-player-stats">2023 - Actualidad</div>
+                            </div>
+                            <div class="top-player-matches">100</div>
+                        </div>
+                        <div class="top-player">
+                            <div class="top-player-rank">5</div>
+                            <div class="top-player-info">
+                                <div class="top-player-name">Rober</div>
+                                <div class="top-player-stats">2023 - Actualidad</div>
+                            </div>
+                            <div class="top-player-matches">97</div>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filters -->
+                    <div class="search-filter">
+                        <input type="text" class="search-input" placeholder="Buscar jugador..." id="playerSearch">
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">Todos</button>
+                            <button class="filter-btn" data-filter="active">Activos</button>
+                            <button class="filter-btn" data-filter="retired">Retirados</button>
+                            <button class="filter-btn" data-filter="100+">100+ Partidos</button>
+                            <button class="filter-btn" data-filter="50+">50+ Partidos</button>
+                        </div>
+                    </div>
+
+                    <!-- Players Grid -->
+                    <div class="players-section">
+                        <div class="players-grid" id="playersGrid">
+                            <!-- Players will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+         
+        </main>
+        <!-- main-area-end -->
+<!-- footer -->
+        <footer class="footer-bg footer-p" style="background: #1e191f;">
+             <div class="footer-top pt-70">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        
+                          <div class="col-xl-4 col-lg-4 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title mb-20">
+                                   <img src="img/logo/logo.png" alt="img" style="max-width: 87px;">
+                                </div>
+                                <div class="footer-link">
+                                   Horario de entrenamientos: <br> D-J 22:30-00:00 (Hora peninsular)
+                                </div>
+                            </div>
+                        </div>  
+                       <div class="col-xl-3 col-lg-3 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title">
+                                    <h2>Redes sociales</h2>
+                                </div>
+                                <div class="footer-social  mt-30">                                    
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                              
+                            </div>
+                        </div>  
+                      
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-wrap">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">                         
+                             Copyright © 2025 Revolution All Rights Reserved. 
+                        </div>
+                        <div class="col-lg-6 text-right text-xl-right">                       
+                                   
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-end -->
+
+
+		<!-- JS here -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/paroller.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/js_isotope.pkgd.min.js"></script>
+        <script src="js/imagesloaded.min.js"></script>
+        <script src="js/parallax.min.js"></script>
+         <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <script src="js/parallax-scroll.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/element-in-view.js"></script>
+        <script src="js/main.js"></script>
+        
+        <script>
+            // Players data
+            const players = [
+                { rank: 1, name: "Vicente", matches: 171, period: "2017-actualidad", status: "active" },
+                { rank: 2, name: "Sergio", matches: 142, period: "2017-actualidad", status: "active" },
+                { rank: 3, name: "Aitor", matches: 126, period: "2019-actualidad", status: "active" },
+                { rank: 4, name: "Ivan", matches: 100, period: "2023-actualidad", status: "active" },
+                { rank: 5, name: "Rober", matches: 97, period: "2023-actualidad", status: "active" },
+                { rank: 6, name: "Jorge", matches: 91, period: "2018-actualidad", status: "active" },
+                { rank: 7, name: "Sevilla", matches: 74, period: "2017-2018, 2023-actualidad", status: "active" },
+                { rank: 8, name: "Padilla", matches: 73, period: "2017-2018, 2023-actualidad", status: "active" },
+                { rank: 9, name: "Alex", matches: 63, period: "2023-actualidad", status: "active" },
+                { rank: 10, name: "Morgar", matches: 63, period: "2023-actualidad", status: "active" },
+                { rank: 11, name: "Dani", matches: 60, period: "2019-actualidad", status: "active" },
+                { rank: 12, name: "Barata", matches: 57, period: "2023-actualidad", status: "active" },
+                { rank: 13, name: "Josema", matches: 50, period: "2017-2020", status: "retired" },
+                { rank: 14, name: "Chema", matches: 49, period: "2017-2020, 2024", status: "retired" },
+                { rank: 15, name: "Julio", matches: 48, period: "2017, 2019-2021", status: "retired" },
+                { rank: 16, name: "Pablo", matches: 48, period: "2023-actualidad", status: "active" },
+                { rank: 17, name: "Nacho", matches: 48, period: "2023-actualidad", status: "active" },
+                { rank: 18, name: "Guille", matches: 45, period: "2023-2024", status: "retired" },
+                { rank: 19, name: "Ray", matches: 45, period: "2023-2024", status: "retired" },
+                { rank: 20, name: "Salvi", matches: 45, period: "2024-actualidad", status: "active" },
+                { rank: 21, name: "Royix", matches: 37, period: "2024-actualidad", status: "active" },
+                { rank: 22, name: "Miguel", matches: 37, period: "2023-2025", status: "retired" },
+                { rank: 23, name: "Carlos", matches: 32, period: "2024-actualidad", status: "active" },
+                { rank: 24, name: "Tompo", matches: 32, period: "2017-2019", status: "retired" },
+                { rank: 25, name: "Alberto", matches: 32, period: "2017-2019", status: "retired" },
+                { rank: 26, name: "Paco", matches: 31, period: "2017-2019", status: "retired" },
+                { rank: 27, name: "Ruben", matches: 30, period: "2017-2019", status: "retired" },
+                { rank: 28, name: "Javi", matches: 29, period: "2017-2020", status: "retired" },
+                { rank: 29, name: "Jorge Penny", matches: 26, period: "2019-2020", status: "retired" },
+                { rank: 30, name: "Varo", matches: 25, period: "2025-actualidad", status: "active" },
+                { rank: 31, name: "Álvaro", matches: 25, period: "2023-2024", status: "retired" },
+                { rank: 32, name: "Antonio", matches: 22, period: "2024", status: "retired" },
+                { rank: 33, name: "Dani Beloqui", matches: 21, period: "2017-2019", status: "retired" },
+                { rank: 34, name: "Toni", matches: 20, period: "2018-2019", status: "retired" },
+                { rank: 35, name: "Candi", matches: 20, period: "2020", status: "retired" },
+                { rank: 36, name: "Borja", matches: 20, period: "2017-2020", status: "retired" },
+                { rank: 37, name: "Alberto", matches: 20, period: "2017-2019", status: "retired" },
+                { rank: 38, name: "Jandro", matches: 19, period: "2019-2020", status: "retired" },
+                { rank: 39, name: "Juanma", matches: 19, period: "2018-2020", status: "retired" },
+                { rank: 40, name: "Edu", matches: 18, period: "2023-2024", status: "retired" },
+                { rank: 41, name: "Javire", matches: 18, period: "2020", status: "retired" },
+                { rank: 42, name: "Topo", matches: 17, period: "2024-actualidad", status: "active" },
+                { rank: 43, name: "Arisan", matches: 13, period: "2024", status: "retired" },
+                { rank: 44, name: "Navas", matches: 13, period: "2017-2018", status: "retired" },
+                { rank: 45, name: "Adri", matches: 12, period: "2020", status: "retired" },
+                { rank: 46, name: "Mario Alberdi", matches: 11, period: "2020", status: "retired" },
+                { rank: 47, name: "Nico", matches: 10, period: "2017", status: "retired" },
+                { rank: 48, name: "Xiovic", matches: 9, period: "2020", status: "retired" },
+                { rank: 49, name: "Gordito", matches: 8, period: "2024-2025", status: "active" },
+                { rank: 50, name: "Axier", matches: 7, period: "2024", status: "retired" },
+                { rank: 51, name: "Jeffer", matches: 2, period: "2023", status: "retired" }
+            ];
+
+            // Render players
+            const playerPageMap = {
+                "Vicente": "estadisticas-vicente.html",
+                "Sergio": "estadisticas-sergio.html",
+                "Aitor": "estadisticas-aitor.html",
+                "Ivan": "estadisticas-ivan.html",
+                "Iván": "estadisticas-ivan.html",
+                "Rober": "estadisticas-roberto.html",
+                "Jorge": "estadisticas-jorge.html",
+                "Alex": "estadisticas-alex.html",
+                "Morgar": null,
+                "Dani": "estadisticas-dani-beloqui.html",
+                "Sevilla": "estadisticas-sevilla.html",
+                "Padilla": "estadisticas-padilla.html",
+                "Josema": null,
+                "Chema": null,
+                "Julio": "estadisticas-julio.html",
+                "Pablo": "estadisticas-pablo.html",
+                "Nacho": "estadisticas-nacho.html",
+                "Guille": "estadisticas-guille.html",
+                "Ray": "estadisticas-ray.html",
+                "Salvi": "estadisticas-salvi.html",
+                "Royix": "estadisticas-royix.html",
+                "Miguel": "estadisticas-miguel.html",
+                "Carlos": "estadisticas-carlos.html",
+                "Tompo": "estadisticas-tompo.html",
+                "Topo": "estadisticas-tompo.html",
+                "Alberto": "estadisticas-alberto.html",
+                "Paco": "estadisticas-paco.html",
+                "Ruben": "estadisticas-ruben.html",
+                "Rubén": "estadisticas-ruben.html",
+                "Javi": "estadisticas-javi.html",
+                "Jorge Penny": "estadisticas-jorgepenny.html",
+                "Varo": null,
+                "Álvaro": "estadisticas-alvaro-dfc.html",
+                "Alvaro": "estadisticas-alvaro-dfc.html",
+                "Antonio": "estadisticas-antonio.html",
+                "Toni": "estadisticas-toni.html",
+                "Candi": "estadisticas-candi.html",
+                "Borja": "estadisticas-borja.html",
+                "Jandro": "estadisticas-jandro.html",
+                "Juanma": "estadisticas-juanma.html",
+                "Edu": "estadisticas-edu.html",
+                "Javire": "estadisticas-javire.html",
+                "Arisan": "estadisticas-arisan.html",
+                "Navas": "estadisticas-navas.html",
+                "Adri": "estadisticas-adri.html",
+                "Mario Alberdi": "estadisticas-mario-alberdi.html",
+                "Xiovic": "estadisticas-xiovic.html",
+                "Axier": "estadisticas-axier.html",
+                "Gordito": "estadisticas-gordito.html",
+                "Jeffer": "estadisticas-jeffer.html",
+                "Nico": "estadisticas-nico.html",
+                "Kevin": "estadisticas-kevin.html",
+            };
+
+            function renderPlayers(filteredPlayers = players) {
+                const grid = document.getElementById('playersGrid');
+                grid.innerHTML = '';
+
+                filteredPlayers.forEach(player => {
+                    const card = document.createElement('div');
+                    card.className = 'player-card';
+                    card.innerHTML = `
+                        <div class="player-rank">${player.rank}</div>
+                        <div class="player-name">${player.name}</div>
+                        <div class="player-matches">${player.matches}</div>
+                        <div class="player-period">${player.period}</div>
+                        <div class="player-status ${player.status}">
+                            ${player.status === 'active' ? 'Activo' : 'Retirado'}
+                        </div>
+                    `;
+                    const href = playerPageMap[player.name] || null;
+                    if (href) {
+                        card.style.cursor = 'pointer';
+                        card.addEventListener('click', function() { window.location.href = href; });
+                    }
+                    grid.appendChild(card);
+                });
+            }
+
+            // Search functionality
+            document.getElementById('playerSearch').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredPlayers = players.filter(player => 
+                    player.name.toLowerCase().includes(searchTerm)
+                );
+                renderPlayers(filteredPlayers);
+            });
+
+            // Filter functionality
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Remove active class from all buttons
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    let filteredPlayers = players;
+                    
+                    switch(filter) {
+                        case 'active':
+                            filteredPlayers = players.filter(p => p.status === 'active');
+                            break;
+                        case 'retired':
+                            filteredPlayers = players.filter(p => p.status === 'retired');
+                            break;
+                        case '100+':
+                            filteredPlayers = players.filter(p => p.matches >= 100);
+                            break;
+                        case '50+':
+                            filteredPlayers = players.filter(p => p.matches >= 50);
+                            break;
+                        default:
+                            filteredPlayers = players;
+                    }
+                    
+                    renderPlayers(filteredPlayers);
+                });
+            });
+
+            // Initialize
+            document.addEventListener('DOMContentLoaded', function() {
+                renderPlayers();
+            });
+        </script>
+    </body>
+</html> 

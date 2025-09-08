@@ -1,0 +1,662 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Revolution eSports - Ranking Histórico</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="font-flaticon/flaticon.css">
+        <link rel="stylesheet" href="css/dripicons.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/meanmenu.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <style>
+            .ranking-table {
+                background: rgba(30, 25, 31, 0.9);
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 30px;
+            }
+            .ranking-row {
+                padding: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                display: flex;
+                align-items: center;
+                transition: all 0.3s ease;
+            }
+            .ranking-row:hover {
+                background: rgba(255, 255, 255, 0.05);
+            }
+            .ranking-position {
+                font-size: 24px;
+                font-weight: bold;
+                color: #ffc010;
+                width: 50px;
+            }
+            .ranking-info {
+                flex-grow: 1;
+            }
+            .ranking-name {
+                font-size: 20px;
+                color: #fff;
+                margin-bottom: 5px;
+            }
+            .ranking-period {
+                font-size: 14px;
+                color: #888;
+            }
+            .ranking-matches {
+                font-size: 24px;
+                font-weight: bold;
+                color: #fff;
+                width: 80px;
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+     <!-- header -->
+        <header class="header-area header-three">  
+			<div id="header-sticky" class="menu-area">
+                <div class="container">
+                    <div class="second-menu">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2 col-6">
+                                <div class="logo">
+                                    <a href="indexAlex.html"><img src="img/logo/logo.png" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 text-right text-xl-right d-none d-lg-block">
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
+
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="historia.html">Quiénes Somos</a></li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Plantilla</a>
+                                                <ul>
+                                                    <li><a href="teamAlex.html">Jugadores actuales (FIFA)</a></li>
+<li><a href="tft.html">TFT</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Históricos (FIFA)</a>
+                                                <ul>
+                                                    <li><a href="capitanes.html">Antiguos capitanes</a></li>
+                                                    <li><a href="ranking.html">Ranking histórico</a></li>
+                                                    <li><a href="historico-jugadores.html">Histórico jugadores</a></li>
+                                                    <li><a href="index-2.html">Mejor 11</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li><a href="calendario.html">Calendario</a></li></ul>
+                                    </nav>
+                                </div>
+                            </div>   
+                            <div class="col-xl-2 col-lg-2 col-6 text-right d-lg-none mt-30 mb-30">
+                               <div class="cart-top">
+                                   <ul>
+                                       <li><a href="#" class="menu-tigger"><img src="img/bg/toggle-menu.png" alt="logo"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile-menu"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header-end -->
+        
+        <!-- main-area -->
+        <main>
+            <!-- ranking-area -->
+            <section class="about-area pt-120 pb-90">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="about-content">
+                                <div class="section-title mb-30 text-center">
+                                    <h2>Ranking <span>Histórico</span></h2>
+                                    <div class="line5"><img src="img/bg/circle_left.png" alt="circle_left"></div>
+                                </div>
+                                <div class="ranking-table" id="rankingTable">
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">1</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Vicente</div>
+                                            <div class="ranking-period">2017-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">153</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">2</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Sergio</div>
+                                            <div class="ranking-period">2017-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">126</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">3</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Aitor</div>
+                                            <div class="ranking-period">2019-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">108</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">4</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Jorge</div>
+                                            <div class="ranking-period">2018-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">83</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">5</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Iván</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">82</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">6</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Rober</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">81</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">7</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Dani</div>
+                                            <div class="ranking-period">2019-2024</div>
+                                        </div>
+                                        <div class="ranking-matches">60</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">8</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Alex</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">57</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">9</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Sevilla</div>
+                                            <div class="ranking-period">2017-2018, 2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">57</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">10</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Barata</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">55</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">11</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Padilla</div>
+                                            <div class="ranking-period">2017-2018, 2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">55</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">12</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Josema</div>
+                                            <div class="ranking-period">2017-2020</div>
+                                        </div>
+                                        <div class="ranking-matches">50</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">13</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Chema</div>
+                                            <div class="ranking-period">2017-2020, 2024</div>
+                                        </div>
+                                        <div class="ranking-matches">49</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">14</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Julio</div>
+                                            <div class="ranking-period">2017, 2019-2021</div>
+                                        </div>
+                                        <div class="ranking-matches">48</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">15</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Pablo</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">48</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">16</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Nacho</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">48</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">17</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Morgar</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">47</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">18</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Guille</div>
+                                            <div class="ranking-period">2023-2024</div>
+                                        </div>
+                                        <div class="ranking-matches">45</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">19</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Ray</div>
+                                            <div class="ranking-period">2023-2024</div>
+                                        </div>
+                                        <div class="ranking-matches">45</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">20</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Salvi</div>
+                                            <div class="ranking-period">2024-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">38</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">21</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Tompo</div>
+                                            <div class="ranking-period">2017-2019</div>
+                                        </div>
+                                        <div class="ranking-matches">32</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">22</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Carlos</div>
+                                            <div class="ranking-period">2024-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">32</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">23</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Royix</div>
+                                            <div class="ranking-period">2024-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">31</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">24</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Miguel</div>
+                                            <div class="ranking-period">2023-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">31</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">25</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Ruben</div>
+                                            <div class="ranking-period">2017-2019</div>
+                                        </div>
+                                        <div class="ranking-matches">30</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">26</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Javi</div>
+                                            <div class="ranking-period">2017-2020</div>
+                                        </div>
+                                        <div class="ranking-matches">29</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">27</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Jorge Penny</div>
+                                            <div class="ranking-period">2019-2020</div>
+                                        </div>
+                                        <div class="ranking-matches">26</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">28</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Antonio</div>
+                                            <div class="ranking-period">2024</div>
+                                        </div>
+                                        <div class="ranking-matches">22</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">29</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Álvaro</div>
+                                            <div class="ranking-period">2023-2024</div>
+                                        </div>
+                                        <div class="ranking-matches">25</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">30</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Dani Beloqui</div>
+                                            <div class="ranking-period">2017-2019</div>
+                                        </div>
+                                        <div class="ranking-matches">21</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">31</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Toni</div>
+                                            <div class="ranking-period">2018-2019</div>
+                                        </div>
+                                        <div class="ranking-matches">20</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">32</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Candi</div>
+                                            <div class="ranking-period">2020</div>
+                                        </div>
+                                        <div class="ranking-matches">20</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">33</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Borja</div>
+                                            <div class="ranking-period">2017-2020</div>
+                                        </div>
+                                        <div class="ranking-matches">20</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">34</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Jandro</div>
+                                            <div class="ranking-period">2019-2020</div>
+                                        </div>
+                                        <div class="ranking-matches">19</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">35</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Juanma</div>
+                                            <div class="ranking-period">2018-2020</div>
+                                        </div>
+                                        <div class="ranking-matches">19</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">36</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Edu</div>
+                                            <div class="ranking-period">2023-2024</div>
+                                        </div>
+                                        <div class="ranking-matches">18</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">37</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Javire</div>
+                                            <div class="ranking-period">2020</div>
+                                        </div>
+                                        <div class="ranking-matches">18</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">38</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Arisan</div>
+                                            <div class="ranking-period">2024</div>
+                                        </div>
+                                        <div class="ranking-matches">13</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">39</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Navas</div>
+                                            <div class="ranking-period">2017</div>
+                                        </div>
+                                        <div class="ranking-matches">13</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">40</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Adri</div>
+                                            <div class="ranking-period">2020</div>
+                                        </div>
+                                        <div class="ranking-matches">12</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">41</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Mario Alberdi</div>
+                                            <div class="ranking-period">2020</div>
+                                        </div>
+                                        <div class="ranking-matches">11</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">42</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Xiovic</div>
+                                            <div class="ranking-period">2020</div>
+                                        </div>
+                                        <div class="ranking-matches">9</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">43</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Varo</div>
+                                            <div class="ranking-period">2025-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">7</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">44</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Topo</div>
+                                            <div class="ranking-period">2024-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">7</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">45</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Axier</div>
+                                            <div class="ranking-period">2024</div>
+                                        </div>
+                                        <div class="ranking-matches">7</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">46</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Gordito</div>
+                                            <div class="ranking-period">2024-actualidad</div>
+                                        </div>
+                                        <div class="ranking-matches">8</div>
+                                    </div>
+                                    <div class="ranking-row">
+                                        <div class="ranking-position">47</div>
+                                        <div class="ranking-info">
+                                            <div class="ranking-name">Jeffer</div>
+                                            <div class="ranking-period">2023</div>
+                                        </div>
+                                        <div class="ranking-matches">2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ranking-area-end -->
+        </main>
+        <!-- main-area-end -->
+        
+        <!-- footer -->
+        <footer class="footer-bg footer-p" style="background: #1e191f;">
+             <div class="footer-top pt-70">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        
+                          <div class="col-xl-4 col-lg-4 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title mb-20">
+                                   <img src="img/logo/logo.png" alt="img" style="max-width: 87px;">
+                                </div>
+                                <div class="footer-link">
+                                   Horario de entrenamientos: <br> D-J 22:30-00:00 (Hora peninsular)
+                                </div>
+                            </div>
+                        </div>  
+                       <div class="col-xl-3 col-lg-3 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title">
+                                    <h2>Redes sociales</h2>
+                                </div>
+                                <div class="footer-social  mt-30">                                    
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                              
+                            </div>
+                        </div>  
+                      
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-wrap">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">                         
+                             Copyright © 2025 Revolution All Rights Reserved. 
+                        </div>
+                        <div class="col-lg-6 text-right text-xl-right">                       
+                                   
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-end -->
+
+        <!-- JS here -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/paroller.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/js_isotope.pkgd.min.js"></script>
+        <script src="js/imagesloaded.min.js"></script>
+        <script src="js/parallax.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/jquery.meanmenu.min.js"></script>
+        <script src="js/parallax-scroll.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/element-in-view.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            (function() {
+                const playerPageMap = {
+                    "Vicente": "estadisticas-vicente.html",
+                    "Sergio": "estadisticas-sergio.html",
+                    "Aitor": "estadisticas-aitor.html",
+                    "Jorge": "estadisticas-jorge.html",
+                    "Iván": "estadisticas-ivan.html",
+                    "Ivan": "estadisticas-ivan.html",
+                    "Rober": "estadisticas-roberto.html",
+                    "Dani": "estadisticas-dani-beloqui.html",
+                    "Alex": "estadisticas-alex.html",
+                    "Sevilla": "estadisticas-sevilla.html",
+                    "Padilla": "estadisticas-padilla.html",
+                    "Josema": null,
+                    "Chema": null,
+                    "Julio": "estadisticas-julio.html",
+                    "Pablo": "estadisticas-pablo.html",
+                    "Nacho": "estadisticas-nacho.html",
+                    "Morgar": null,
+                    "Guille": "estadisticas-guille.html",
+                    "Ray": "estadisticas-ray.html",
+                    "Salvi": "estadisticas-salvi.html",
+                    "Tompo": "estadisticas-tompo.html",
+                    "Carlos": "estadisticas-carlos.html",
+                    "Royix": "estadisticas-royix.html",
+                    "Miguel": "estadisticas-miguel.html",
+                    "Ruben": "estadisticas-ruben.html",
+                    "Javi": "estadisticas-javi.html",
+                    "Jorge Penny": "estadisticas-jorgepenny.html",
+                    "Antonio": "estadisticas-antonio.html",
+                    "Álvaro": "estadisticas-alvaro-dfc.html",
+                    "Alvaro": "estadisticas-alvaro-dfc.html",
+                    "Dani Beloqui": "estadisticas-dani-beloqui.html",
+                    "Toni": "estadisticas-toni.html",
+                    "Candi": "estadisticas-candi.html",
+                    "Borja": "estadisticas-borja.html",
+                    "Jandro": "estadisticas-jandro.html",
+                    "Juanma": "estadisticas-juanma.html",
+                    "Edu": "estadisticas-edu.html",
+                    "Javire": "estadisticas-javire.html",
+                    "Arisan": "estadisticas-arisan.html",
+                    "Navas": "estadisticas-navas.html",
+                    "Adri": "estadisticas-adri.html",
+                    "Mario Alberdi": "estadisticas-mario-alberdi.html",
+                    "Xiovic": "estadisticas-xiovic.html",
+                    "Varo": null,
+                    "Topo": "estadisticas-tompo.html",
+                    "Axier": "estadisticas-axier.html",
+                    "Gordito": "estadisticas-gordito.html",
+                    "Jeffer": "estadisticas-jeffer.html",
+                };
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.querySelectorAll('#rankingTable .ranking-row').forEach(function(row) {
+                        const nameEl = row.querySelector('.ranking-name');
+                        if (!nameEl) return;
+                        const name = nameEl.textContent.trim();
+                        const href = playerPageMap[name] || null;
+                        if (href) {
+                            row.style.cursor = 'pointer';
+                            row.addEventListener('click', function() { window.location.href = href; });
+                        }
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html> 

@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Revolution eSports - Estadísticas de <span id="page-title">Jugador</span></title>
+    <meta name="description" content="Estadísticas detalladas de <span id="meta-description">Jugador</span> - Revolution Esports">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="font-flaticon/flaticon.css">
+    <link rel="stylesheet" href="css/dripicons.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+      .player-header{background:linear-gradient(135deg,rgba(255,107,53,.1) 0%,rgba(255,107,53,.05) 100%);border-radius:20px;padding:40px;margin-bottom:40px;text-align:center;border:1px solid rgba(255,107,53,.2)}
+      .player-avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;border:4px solid #ff6b35;overflow:hidden}
+      .player-avatar img{width:100%;height:100%;object-fit:cover}
+      .player-name{color:#fff;font-size:36px;font-weight:bold;margin-bottom:10px}
+      .player-subtitle{color:#ff6b35;font-size:18px;margin-bottom:20px}
+      .stats-overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:40px}
+      .stat-item{background:rgba(255,255,255,.05);border-radius:15px;padding:20px;text-align:center;border:1px solid rgba(255,255,255,.1)}
+      .stat-number{font-size:32px;font-weight:bold;color:#ff6b35;margin-bottom:5px}
+      .stat-label{color:#ccc;font-size:14px;text-transform:uppercase;letter-spacing:1px}
+      .stats-table-container{background:rgba(255,255,255,.05);border-radius:20px;padding:30px;margin-bottom:40px;overflow-x:auto}
+      .stats-table{width:100%;border-collapse:collapse;color:#fff}
+      .stats-table th{background:rgba(255,107,53,.2);color:#ff6b35;padding:15px 10px;text-align:center;font-weight:bold;border-bottom:2px solid rgba(255,107,53,.3);text-transform:uppercase;font-size:14px;letter-spacing:1px}
+      .stats-table td{padding:12px 10px;text-align:center;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px}
+      .stats-table tr:hover{background:rgba(255,107,53,.05)}
+      .stats-table .season{text-align:left;font-weight:bold;color:#ff6b35}
+      .stats-table .competition{text-align:left;color:#ccc}
+      .stats-table .totals-row{background:rgba(255,107,53,.1);font-weight:bold;color:#fff}
+      .stats-table .totals-row td{border-bottom:2px solid rgba(255,107,53,.3)}
+      .season-breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-bottom:40px}
+      .season-card{background:linear-gradient(135deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.03) 100%);border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:25px;position:relative;overflow:hidden}
+      .season-title{color:#ff6b35;font-size:20px;font-weight:bold;margin-bottom:15px}
+      .competition-badge{display:inline-block;background:rgba(255,107,53,.2);color:#ff6b35;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:bold;text-transform:uppercase}
+      .season-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:15px}
+      .season-stat{text-align:center}
+      .season-stat-number{color:#fff;font-size:24px;font-weight:bold;margin-bottom:5px}
+      .season-stat-label{color:#ccc;font-size:12px;text-transform:uppercase}
+      .back-button{background:linear-gradient(135deg,#ff6b35,#ff8c42);color:#fff;border:none;padding:12px 30px;border-radius:25px;font-weight:bold;text-decoration:none;display:inline-block;margin-bottom:30px}
+      @media (max-width:768px){.stats-table{font-size:12px}.stats-table th,.stats-table td{padding:8px 5px}.player-name{font-size:28px}.stats-overview{grid-template-columns:repeat(2,1fr)}}
+    </style>
+  </head>
+  <body>
+    <header class="header-area header-three">
+      <div id="header-sticky" class="menu-area"><div class="container"><div class="second-menu"><div class="row align-items-center"><div class="col-xl-2 col-lg-2 col-6"><div class="logo"><a href="index.html"><img src="img/logo/logo.png" alt="logo"></a></div></div><div class="col-xl-10 col-lg-10 text-right text-xl-right d-none d-lg-block"><div class="main-menu"><nav id="mobile-menu">
+                                        <ul>
+
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li><a href="historia.html">Quiénes Somos</a></li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Plantilla</a>
+                                                <ul>
+                                                    <li><a href="teamAlex.html">Jugadores actuales (FIFA)</a></li>
+<li><a href="tft.html">TFT</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="has-sub">
+                                                <a href="index.html">Históricos (FIFA)</a>
+                                                <ul>
+                                                    <li><a href="capitanes.html">Antiguos capitanes</a></li>
+                                                    <li><a href="ranking.html">Ranking histórico</a></li>
+                                                    <li><a href="historico-jugadores.html">Histórico jugadores</a></li>
+                                                    <li><a href="index-2.html">Mejor 11</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li><a href="calendario.html">Calendario</a></li></ul>
+                                    </nav></div></div><div class="col-xl-2 col-lg-2 col-6 text-right d-lg-none mt-30 mb-30"><div class="cart-top"><ul><li><a href="#" class="menu-tigger"><img src="img/bg/toggle-menu.png" alt="logo"></a></li></ul></div></div><div class="col-12"><div class="mobile-menu"></div></div></div></div></div>
+    </header>
+    <main>
+      <section class="about-area pt-120 pb-90"><div class="container"><div class="row align-items-center"><div class="col-lg-12"><div class="about-content"><div class="section-title mb-30 text-center"><h2><span>ESTADÍSTICAS DETALLADAS</span></h2><div class="line5"><img src="img/bg/circle_left.png" alt="circle_left"></div></div><div><p class="text-center" style="font-size:18px;line-height:1.8;color:#fff;">Análisis completo de la trayectoria deportiva de <span id="breadcrumb-player">Jugador</span> en Revolution Esports</p></div></div></div></div></div></section>
+      <section class="pb-90"><div class="container"><a href="historico-jugadores.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver al Histórico</a><div class="player-header"><div class="player-avatar"><img id="player-avatar" src="img/team/team_img01.png" alt="Jugador" onerror="this.src='img/team/team_img01.png'"></div><h1 id="player-name" class="player-name">Jugador</h1><p id="player-club" class="player-subtitle">CD Revolution eSports</p><p id="player-period" style="color:#ccc;font-size:16px;">Jugador desde 2017 - Actualidad</p></div><div class="stats-overview" id="stats-overview"></div><div id="achievements-section" style="margin-bottom:40px;"></div><div class="stats-table-container"><h3 style="color:#fff;text-align:center;margin-bottom:30px;font-size:24px;">HISTORIAL COMPLETO</h3><table class="stats-table" id="stats-table"><thead><tr><th>Temporada</th><th>Competición</th><th>PJ</th><th>G</th><th>A</th><th>Amar.</th><th>Rojas</th></tr></thead><tbody id="stats-table-body"></tbody></table></div><div class="season-breakdown" id="season-breakdown"></div></div></section>
+    </main>
+    <footer class="footer-bg footer-p" style="background:#1e191f;"><div class="footer-top pt-70"><div class="container"><div class="row justify-content-between"><div class="col-xl-4 col-lg-3 col-sm-6"><div class="footer-widget mb-30"><div class="f-widget-title mb-20"><img src="img/logo/logo.png" alt="img" style="max-width:87px;"></div><div class="footer-link">Horario de entrenamientos: <br> D-J 22:30-00:00 (Hora peninsular)</div></div></div><div class="col-xl-3 col-lg-3 col-sm-6"><div class="footer-widget mb-30"><div class="f-widget-title"><h2>Redes sociales</h2></div><div class="footer-social  mt-30"><a href="https://www.facebook.com/RevolutionEsports" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://twitter.com/Revolution_CD?t=wXBjo4snJkZsLXZUl3gdHw&s=09" target="_blank"><i class="fab fa-twitter"></i></a><a href="https://www.instagram.com/RevolutionEsports" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.twitch.tv/cd_revolution_esports?sr=a" target="_blank"><i class="fab fa-twitch"></i></a></div></div></div></div></div></div><div class="copyright-wrap"><div class="container"><div class="row align-items-center"><div class="col-lg-6">Copyright © 2025 Revolution All Rights Reserved. </div><div class="col-lg-6 text-right text-xl-right"></div></div></div></div></footer>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script><script src="js/vendor/jquery-3.6.0.min.js"></script><script src="js/popper.min.js"></script><script src="js/bootstrap.min.js"></script><script src="js/slick.min.js"></script><script src="js/ajax-form.js"></script><script src="js/paroller.js"></script><script src="js/wow.min.js"></script><script src="js/js_isotope.pkgd.min.js"></script><script src="js/imagesloaded.min.js"></script><script src="js/parallax.min.js"></script><script src="js/jquery.waypoints.min.js"></script><script src="js/jquery.counterup.min.js"></script><script src="js/jquery.scrollUp.min.js"></script><script src="js/jquery.meanmenu.min.js"></script><script src="js/parallax-scroll.js"></script><script src="js/jquery.magnific-popup.min.js"></script><script src="js/element-in-view.js"></script><script src="js/main.js"></script>
+    <script>
+      const playerData={
+        "jugador":"Miguel",
+        "club":"CD Revolution eSports",
+        "historial":[
+          {"temporada":"2023/2024","competicion":"VFO","pj":18,"goles":2,"asistencias":1,"amarillas":1,"rojas":3},
+          {"temporada":"2023/2024","competicion":"VPG","pj":16,"goles":1,"asistencias":2,"amarillas":0,"rojas":2},
+          {"temporada":"2024/2025 T2","competicion":"VPG","pj":8,"goles":1,"asistencias":1,"amarillas":2,"rojas":3}
+        ],
+        "totales":{"pj":42,"goles":4,"asistencias":4,"amarillas":3,"rojas":8},
+        "logros":[]
+      };
+      function generatePlayerStats(){document.title=`Revolution eSports - Estadísticas de ${playerData.jugador}`;document.querySelector('meta[name="description"]').content=`Estadísticas detalladas de ${playerData.jugador} - Revolution Esports`;document.getElementById('breadcrumb-player').textContent=playerData.jugador;document.getElementById('player-name').textContent=playerData.jugador;document.getElementById('player-club').textContent=playerData.club;document.getElementById('player-avatar').src=`img/team/${playerData.jugador.toLowerCase()}.png`;document.getElementById('player-avatar').alt=playerData.jugador;const f=playerData.historial[0].temporada,l=playerData.historial[playerData.historial.length-1].temporada;const s=f.split('/')[0],e=l.includes('/')?l.split('/')[0]:'Actualidad';document.getElementById('player-period').textContent=`Jugador desde ${s} - ${e}`;generateStatsOverview();generateAchievements();generateStatsTable();generateSeasonBreakdown();}
+      function generateStatsOverview(){const o=document.getElementById('stats-overview'),t=playerData.totales;o.innerHTML=`<div class="stat-item"><div class="stat-number">${t.pj}</div><div class="stat-label">Partidos Jugados</div></div><div class="stat-item"><div class="stat-number">${t.goles}</div><div class="stat-label">Goles</div></div><div class="stat-item"><div class="stat-number">${t.asistencias}</div><div class="stat-label">Asistencias</div></div><div class="stat-item"><div class="stat-number">${t.amarillas}</div><div class="stat-label">Tarjetas Amarillas</div></div><div class="stat-item"><div class="stat-number">${t.rojas}</div><div class="stat-label">Tarjetas Rojas</div></div><div class="stat-item"><div class="stat-number">1</div><div class="stat-label">Ranking Histórico</div></div>`}
+      function generateAchievements(){document.getElementById('achievements-section').innerHTML=''}
+      function generateStatsTable(){const b=document.getElementById('stats-table-body');let h='';playerData.historial.forEach(s=>{h+=`<tr><td class="season">${s.temporada}</td><td class="competition">${s.competicion}</td><td>${s.pj}</td><td>${s.goles}</td><td>${s.asistencias}</td><td>${s.amarillas}</td><td>${s.rojas===null?'–':s.rojas}</td></tr>`});h+=`<tr class="totals-row"><td><strong>TOTALS</strong></td><td></td><td><strong>${playerData.totales.pj}</strong></td><td><strong>${playerData.totales.goles}</strong></td><td><strong>${playerData.totales.asistencias}</strong></td><td><strong>${playerData.totales.amarillas}</strong></td><td><strong>${playerData.totales.rojas}</strong></td></tr>`;b.innerHTML=h}
+      function generateSeasonBreakdown(){const c=document.getElementById('season-breakdown');const g={};playerData.historial.forEach(s=>{const k=s.temporada.split(' ')[0];if(!g[k])g[k]={temporada:k,competiciones:[],totalPj:0,totalGoles:0,totalAsistencias:0,totalAmarillas:0,totalRojas:0};g[k].competiciones.push(s.competicion);g[k].totalPj+=s.pj;g[k].totalGoles+=s.goles;g[k].totalAsistencias+=s.asistencias;g[k].totalAmarillas+=s.amarillas;g[k].totalRojas+=s.rojas||0});let html='';Object.values(g).forEach(s=>{const u=[...new Set(s.competiciones)];html+=`<div class="season-card"><div class="season-title">${s.temporada}</div><div class="competition-badge">${u.join(' + ')}</div><div class="season-stats"><div class="season-stat"><div class="season-stat-number">${s.totalPj}</div><div class="season-stat-label">Partidos</div></div><div class="season-stat"><div class="season-stat-number">${s.totalGoles}</div><div class="season-stat-label">Goles</div></div><div class="season-stat"><div class="season-stat-number">${s.totalAsistencias}</div><div class="season-stat-label">Asistencias</div></div><div class="season-stat"><div class="season-stat-number">${s.totalAmarillas+s.totalRojas}</div><div class="season-stat-label">Tarjetas</div></div></div></div>`});c.innerHTML=html}
+      document.addEventListener('DOMContentLoaded',generatePlayerStats);
+    </script>
+  </body>
+</html>
+
+
+
